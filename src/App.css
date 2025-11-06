@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent font sizing adjustments on orientation change */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Light theme */
+:root[data-theme='light'] {
+  --primary-color: #E74C3C;
+  --secondary-color: #2C3E50;
+  --accent-color: #27AE60;
+  --success-color: #27AE60;
+  --error-color: #E74C3C;
+  --text-primary: #2C3E50;
+  --text-secondary: #7F8C8D;
+  --bg-primary: #ffffff;
+  --bg-secondary: #ECF0F1;
+  --form-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #BDC3C7;
+  --disabled-bg: #ECF0F1;
+  --border-color: #D5DBDB;
+}
+
+/* Dark theme */
+:root[data-theme='dark'] {
+  --primary-color: #E74C3C;
+  --secondary-color: #ECF0F1;
+  --accent-color: #27AE60;
+  --success-color: #27AE60;
+  --error-color: #E74C3C;
+  --text-primary: #ECF0F1;
+  --text-secondary: #BDC3C7;
+  --bg-primary: #2C3E50;
+  --bg-secondary: #34495E;
+  --form-bg: #34495E;
+  --input-bg: #2C3E50;
+  --input-border: #5D6D7B;
+  --disabled-bg: #3D4F64;
+  --border-color: #5D6D7B;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Prevent unwanted scrolling on iOS */
+  -webkit-touch-callout: none;
+  /* Optimize for mobile */
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  /* Ensure full height on mobile */
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .app-title {
+    font-size: 26px;
+  }
+
+  .app-subtitle {
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .form-container h2 {
+    font-size: 24px;
+  }
+
+  .form-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .app-main {
+    padding: 0 20px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app-header {
+    padding: 24px 16px;
+    margin-bottom: 24px;
+  }
+
+  .app-title {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .app-subtitle {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .form-container h2 {
+    font-size: 20px;
+  }
+
+  .form-description {
+    font-size: 13px;
+  }
+
+  .app-main {
+    padding: 0 16px 24px;
+  }
+
+  /* Ensure buttons are at least 44px for touch */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

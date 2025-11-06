@@ -1,0 +1,268 @@
+.contacts-list {
+  padding: 24px;
+  background-color: var(--form-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 32px;
+}
+
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.contacts-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.refresh-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.retry-button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  opacity: 0.9;
+}
+
+.loading,
+.error-message,
+.no-contacts {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.error-message {
+  color: #dc2626;
+  background-color: rgba(220, 38, 38, 0.05);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.contacts-table-wrapper {
+  overflow-x: auto;
+}
+
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.contacts-table thead {
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.contacts-table th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.contacts-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.contacts-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.contacts-table a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacts-table a:hover {
+  text-decoration: underline;
+}
+
+.comment-cell {
+  max-width: 200px;
+}
+
+.comment-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+.comment-button:hover {
+  color: var(--primary-color);
+  opacity: 0.8;
+}
+
+.date-cell {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .contacts-list {
+    padding: 16px;
+  }
+
+  .contacts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contacts-header h3 {
+    font-size: 16px;
+  }
+
+  .refresh-button {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .contacts-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 16px;
+  }
+
+  .contacts-table {
+    font-size: 12px;
+    min-width: 500px;
+  }
+
+  .contacts-table th,
+  .contacts-table td {
+    padding: 8px 6px;
+  }
+
+  .contacts-table thead th {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+  }
+
+  .comment-button {
+    font-size: 12px;
+    padding: 0 4px;
+  }
+
+  .date-cell {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts-list {
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .contacts-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .contacts-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .refresh-button {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    min-height: 44px;
+  }
+
+  .contacts-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    margin: -12px -12px 0 -12px;
+  }
+
+  .contacts-table {
+    font-size: 11px;
+    width: 100%;
+  }
+
+  .contacts-table th {
+    padding: 10px 6px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .contacts-table td {
+    padding: 10px 6px;
+  }
+
+  .comment-cell {
+    max-width: 80px;
+  }
+
+  .comment-button {
+    font-size: 11px;
+    text-decoration: underline;
+  }
+
+  .date-cell {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .loading,
+  .error-message,
+  .no-contacts {
+    padding: 30px 16px;
+    font-size: 14px;
+  }
+}
