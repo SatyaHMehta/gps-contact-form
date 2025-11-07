@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import CommentModal from './CommentModal';
+import ExportButton from './ExportButton';
 import './ContactsList.css';
 
 export default function ContactsList() {
@@ -71,9 +72,12 @@ export default function ContactsList() {
     <div className="contacts-list">
       <div className="contacts-header">
         <h3>Contact Submissions ({contacts.length})</h3>
-        <button onClick={fetchContacts} className="refresh-button">
-          Refresh
-        </button>
+        <div className="contacts-header-actions">
+          <ExportButton contacts={contacts} />
+          <button onClick={fetchContacts} className="refresh-button">
+            Refresh
+          </button>
+        </div>
       </div>
 
       {contacts.length === 0 ? (

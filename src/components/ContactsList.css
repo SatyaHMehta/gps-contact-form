@@ -12,12 +12,19 @@
   align-items: center;
   margin-bottom: 20px;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .contacts-header h3 {
   margin: 0;
   font-size: 18px;
   color: var(--text-primary);
+}
+
+.contacts-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .refresh-button {
@@ -158,8 +165,17 @@
     font-size: 16px;
   }
 
-  .refresh-button {
+  .contacts-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     width: 100%;
+  }
+
+  .refresh-button,
+  .contacts-header-actions .export-button {
+    flex: 1;
+    min-width: 120px;
     padding: 12px 16px;
     font-size: 12px;
   }
@@ -215,6 +231,14 @@
     font-weight: 700;
   }
 
+  .contacts-header-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .contacts-header-actions .export-button,
   .refresh-button {
     width: 100%;
     padding: 12px 14px;
